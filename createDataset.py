@@ -15,6 +15,7 @@ class createDataset(torch.utils.data.Dataset):
         self.classes= np.zeros(num_nodes)
     
     def generate_grap(self):
+        print("p,q",self.p,self.q)
         G = nx.Graph()
         
         # Add nodes to the graph
