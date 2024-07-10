@@ -2,8 +2,8 @@ import torch
 from torch_geometric.data import Data
 import numpy as np
 import networkx as nx
-from itertools import permutations
 import random
+
 
 class createDataset(torch.utils.data.Dataset):
     def __init__(self, num_nodes, num_classes, q):
@@ -15,7 +15,6 @@ class createDataset(torch.utils.data.Dataset):
         self.classes= np.zeros(num_nodes)
     
     def generate_grap(self):
-        # Initialize the graph
         G = nx.Graph()
         
         # Add nodes to the graph
@@ -49,7 +48,6 @@ class createDataset(torch.utils.data.Dataset):
         tempArr= [c for c in classes.values()]
         for i in range(len(tempArr)):
             for j in tempArr[i]:
-
                 self.classes[j]= i
     
     def __len__(self):
