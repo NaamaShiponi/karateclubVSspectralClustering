@@ -70,10 +70,15 @@ def run(file,num_nodes, n_classes ,q):
 if __name__ == '__main__':
     '''
     Run use DGL graphs:
-        python3 main.py --num_nodes 100 --num_classes 2 --p 0.9 --q 0.3 --grap_dgl_path "/home/naama/.dgl/sbmmixture"
+        python3 main.py --p 0.9 --q 0.3 --grap_dgl_path "/home/naama/.dgl/sbmmixture"
     
     Run without DGL graphs:
         python3 main.py --num_nodes 100 --num_classes 2
+        
+    Options parameters:
+        --num_nodes 100 
+        --num_classes 2
+    
     '''
     parser = argparse.ArgumentParser(description='GCN Community Detection Parameters')
     parser.add_argument('--num_nodes', type=int, default=100, help='Number of nodes')
